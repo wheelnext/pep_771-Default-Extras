@@ -1,0 +1,12 @@
+[submodule "setuptools"]
+	path = setuptools
+	url = git@github.com:wheel-next/setuptools.git
+[submodule "pip"]
+	path = pip
+	url = git@github.com:wheel-next/pip.git
+[submodule "validate-pyproject"]
+	path = validate-pyproject
+	url = git@github.com:abravalheri/validate-pyproject.git
+[submodule "importlib_metadata"]
+	path = importlib_metadata
+	url = git@github.com:python/importlib_metadata.git
