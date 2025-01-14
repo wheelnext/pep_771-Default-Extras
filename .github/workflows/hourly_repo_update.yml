@@ -40,7 +40,7 @@ jobs:
         run: |
           git pull --recurse-submodules
           git submodule update --remote --recursive
-          git submodule foreach git pull origin pep_771
+          git submodule foreach 'if [ "$name" = "mockhouse" ]; then git pull origin main; else git pull origin pep_771; fi'
 
       # Upload the update to github
       - name: Commit update
