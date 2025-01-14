@@ -1,0 +1,4 @@
+[tool.monas]
+packages = ["pip", "setuptools", "validate-pyproject", "importlib_metadata"]
+version = "0.0.1"
+python-version = "3.13"

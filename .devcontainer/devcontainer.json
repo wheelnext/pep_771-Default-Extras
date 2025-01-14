@@ -1,0 +1,65 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/docker-existing-dockerfile
+{
+    "name": "PEP 771 - Dev Container",
+    "image": "python:latest",
+    "workspaceFolder": "/workspace/",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/,type=bind",
+    // Set *default* container specific settings.json values on container create.
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnSave": true,
+                "remote.autoForwardPorts": false,
+                "[python]": {
+                    "analysis.autoImportCompletions": true,
+                    "analysis.typeCheckingMode": "basic",
+                    "defaultInterpreterPath": "/usr/local/bin/python",
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": "always"
+                    },
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "languageServer": "Pylance",
+                    "linting.enabled": true,
+                    "linting.flake8Enabled": true,
+                    "linting.mypyEnabled": true,
+                    "linting.mypyPath": "/usr/local/bin/mypy",
+                    "linting.pylintEnabled": true
+                }
+            },
+            "extensions": [
+                // Python
+                "ms-python.python",
+                // Build Tools
+                "ms-azuretools.vscode-docker",
+                // Git & Github
+                "GitHub.vscode-pull-request-github",
+                // GitLens
+                "eamodio.gitlens",
+                // Makefile
+                "ms-vscode.makefile-tools",
+                // TOML
+                "tamasfe.even-better-toml",
+                // PyLance
+                "ms-python.vscode-pylance",
+                // Makefile Tools
+                "ms-vscode.makefile-tools",
+                // Ruff
+                "charliermarsh.ruff"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install monas && monas install --root",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "username": "PEP_771",
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "configureZshAsDefaultShell": false,
+            "upgradePackages": false
+        },
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest"
+        }
+    }
+}
