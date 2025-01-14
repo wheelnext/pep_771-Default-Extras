@@ -50,6 +50,16 @@
         }
     },
     "postCreateCommand": "pip install monas && monas install --root",
+    "postStartCommand": "bash -c 'cd mockhouse/ && python3 -m http.server 5000'",
+    "forwardPorts": [
+        5000
+    ],
+    "portsAttributes": {
+        "5000": {
+            "label": "MockHouse PIP Server",
+            "onAutoForward": "openBrowser"
+        }
+    },
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {
             "username": "PEP_771",

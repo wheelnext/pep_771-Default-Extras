@@ -68,7 +68,7 @@
             "module": "pip",
             "args": [
                 "install",
-                "--index-url=https://wheel-next.github.io/static_pipserver/",
+                "--index-url=https://wheel-next.github.io/mockhouse/pep-771/",
                 "--verbose",
                 "pep-771-demo-a"
             ],

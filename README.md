@@ -19,16 +19,20 @@ Aside of that, both have the exact same logic, exact same behavior:
 virtualenv .venv
 source .venv/bin/activate
 
+# 2. Set the extra index to the Wheel-Next Static Wheel Server: MockHouse
+pip config set --site global.extra-index-url https://wheel-next.github.io/mockhouse/pep-771/
+>>> Writing to /path/to/venv/pip.conf
+
 # 2. Install the PEP 771 Metapackage that will give you the modified libraries:
 # - setuptools
 # - pip
 # - importlib_metadata
 # - validate-pyproject
-pip install --extra-index-url=https://wheel-next.github.io/static_pipserver/ pep-771
+pip install pep-771
 
 # 3. Let's verify everything is good:
 pip --version
->>> pip 25.0.dev0+pep-771 from ...
+>>> pip 25.0.dev0+pep-771 from ...  # <=============== Check you can see `+pep-771`
 
 pip freeze | grep setuptools
 >>> setuptools @ git+https://github.com/wheel-next/setuptools.git@...
@@ -45,39 +49,39 @@ pip freeze | grep importlib_metadata
  ```bash
  # -------------------- Then choose one of the followings -------------------- #
 
-# ~~~~~~~~ demo_pep_771_flavorA ~~~~~~~~ #
+# ~~~~~~~~ pep-771-demo-a ~~~~~~~~ #
 
-# will install demo_pep_771_flavorA AND the default `flask` extra
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorA
+# will install pep-771-demo-a AND the default `flask` extra
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-a
 
-# will install demo_pep_771_flavorA AND the explicit `flask` extra
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorA[flask]
+# will install pep-771-demo-a AND the explicit `flask` extra
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-a[flask]
 
-# will install demo_pep_771_flavorA AND the explicit `fastapi` extra - no default "flask"
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorA[fastapi]
+# will install pep-771-demo-a AND the explicit `fastapi` extra - no default "flask"
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-a[fastapi]
 
-# will install demo_pep_771_flavorA AND the explicit `minimal` extra - no default "flask"
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorA[minimal]
+# will install pep-771-demo-a AND the explicit `minimal` extra - no default "flask"
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-a[minimal]
 
-# ~~~~~~~~ demo_pep_771_flavorB ~~~~~~~~ #
+# ~~~~~~~~ pep-771-demo-b ~~~~~~~~ #
 
-# will install demo_pep_771_flavorB AND the default `flask` extra
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorB
+# will install pep-771-demo-b AND the default `flask` extra
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-b
 
-# will install demo_pep_771_flavorB AND the explicit `flask` extra
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorB[flask]
+# will install pep-771-demo-b AND the explicit `flask` extra
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-b[flask]
 
-# will install demo_pep_771_flavorB AND the explicit `fastapi` extra - no default "flask"
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorB[fastapi]
+# will install pep-771-demo-b AND the explicit `fastapi` extra - no default "flask"
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-b[fastapi]
 
-# will install demo_pep_771_flavorB AND the explicit `minimal` extra - no default "flask"
-pip uninstall -y flask fastapi demo_pep_771_flavorA demo_pep_771_flavorB
-pip install demo_pep_771_flavorB[minimal]
+# will install pep-771-demo-b AND the explicit `minimal` extra - no default "flask"
+pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip install pep-771-demo-b[minimal]
 ```
