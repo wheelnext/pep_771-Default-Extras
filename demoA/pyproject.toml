@@ -1,0 +1,23 @@
+[build-system]
+# requires = [
+#     "setuptools @ git+https://github.com/wheel-next/setuptools.git#egg=pep/pep_771",
+# ]
+requires = ["setuptools @ git+file:///workspace/setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+exclude = ["*"]
+
+[project]
+name = "pep-771-demo-a"
+version = "1.0.0"
+authors = [
+    { name = "Thomas Robitaille", email = "thomas.robitaille@gmail.com" },
+    { name = "Jonathan Dekhtiar", email = "jonathan@dekhtiar.com" },
+]
+default-optional-dependencies = ["flask"]
+
+[project.optional-dependencies]
+fastapi = ["fastapi"]
+flask = ["flask"]
+minimal = []

@@ -1,0 +1,77 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build Demo Plugin - Flavor A",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/demo_pep_771_flavorA",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "module": "build",
+            "args": [
+                "--wheel",
+                "--no-isolation",
+                "--verbose"
+            ],
+        },
+        {
+            "name": "Build Demo Plugin - Flavor B",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/demo_pep_771_flavorB",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "module": "build",
+            "args": [
+                "--wheel",
+                "--no-isolation",
+                "--verbose"
+            ],
+        },
+        {
+            "name": "Install Demo Plugin - Flavor A",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/demo_pep_771_flavorA/dist",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "module": "pip",
+            "args": [
+                "install",
+                "demo_pep_771_flavorA-1.0.0-py3-none-any.whl"
+            ],
+        },
+        {
+            "name": "Install Demo Plugin - Flavor B",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/demo_pep_771_flavorB/dist",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "module": "pip",
+            "args": [
+                "install",
+                "demo_pep_771_flavorB-1.0.0-py3-none-any.whl"
+            ],
+        },
+        {
+            "name": "Install Demo Plugin",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "module": "pip",
+            "args": [
+                "install",
+                "--index-url=https://wheel-next.github.io/static_pipserver/",
+                "--verbose",
+                "pep-771-demo-a"
+            ],
+        },
+    ]
+}

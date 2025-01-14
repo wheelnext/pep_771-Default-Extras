@@ -10,3 +10,6 @@
 [submodule "importlib_metadata"]
 	path = importlib_metadata
 	url = git@github.com:python/importlib_metadata.git
+[submodule "static_pipserver"]
+	path = static_pipserver
+	url = git@github.com:wheel-next/static_pipserver.git

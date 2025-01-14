@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pep-771"
+version = "1.0.0"
+authors = [
+  { name = "Thomas Robitaille", email = "thomas.robitaille@gmail.com" },
+  { name = "Jonathan Dekhtiar", email = "jonathan@dekhtiar.com" },
+]
+dependencies = [
+  "setuptools @ git+https://github.com/wheel-next/setuptools.git@pep_771",
+  "pip @ git+https://github.com/wheel-next/pip.git@pep_771",
+  "validate-pyproject @ git+https://github.com/wheel-next/validate-pyproject.git@pep_771",
+  "importlib_metadata @ git+https://github.com/wheel-next/importlib_metadata.git@pep_771",
+]
