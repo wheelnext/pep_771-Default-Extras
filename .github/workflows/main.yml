@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@v1
+    with:
+      envs: |
+        - linux: demoa-noextra
+        - linux: demoa-explicit
+        - linux: demoa-extra
+        - linux: demoa-minimal
+        - linux: demob-noextra
+        - linux: demob-explicit
+        - linux: demob-extra
+        - linux: demob-minimal
