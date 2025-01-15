@@ -36,6 +36,8 @@
                 "GitHub.vscode-pull-request-github",
                 // GitLens
                 "eamodio.gitlens",
+                // Github Actions
+                "github.vscode-github-actions",
                 // Makefile
                 "ms-vscode.makefile-tools",
                 // TOML

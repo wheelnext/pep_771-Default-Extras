@@ -68,9 +68,24 @@
             "module": "pip",
             "args": [
                 "install",
-                "--index-url=https://wheel-next.github.io/mockhouse/pep-771/",
                 "--verbose",
+                "--force-reinstall",
                 "pep-771-demo-a"
+            ],
+        },
+        {
+            "name": "Install Demo Plugin with Extra",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "module": "pip",
+            "args": [
+                "install",
+                "--verbose",
+                "--force-reinstall",
+                "pep-771-demo-a[flask]"
             ],
         },
     ]
