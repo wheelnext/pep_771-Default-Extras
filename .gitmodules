@@ -4,12 +4,6 @@
 [submodule "pip"]
 	path = pip
 	url = git@github.com:wheel-next/pip.git
-[submodule "validate-pyproject"]
-	path = validate-pyproject
-	url = git@github.com:wheel-next/validate-pyproject.git
-[submodule "importlib_metadata"]
-	path = importlib_metadata
-	url = git@github.com:wheel-next/importlib_metadata.git
 [submodule "mockhouse"]
 	path = mockhouse
 	url = git@github.com:wheel-next/mockhouse.git
