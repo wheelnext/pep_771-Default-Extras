@@ -8,7 +8,7 @@
             "name": "Build Demo Plugin - Flavor A",
             "type": "debugpy",
             "request": "launch",
-            "cwd": "${workspaceFolder}/demo_pep_771_flavorA",
+            "cwd": "${workspaceFolder}/demoA",
             "console": "integratedTerminal",
             "justMyCode": false,
             "module": "build",
@@ -22,7 +22,7 @@
             "name": "Build Demo Plugin - Flavor B",
             "type": "debugpy",
             "request": "launch",
-            "cwd": "${workspaceFolder}/demo_pep_771_flavorB",
+            "cwd": "${workspaceFolder}/demoB",
             "console": "integratedTerminal",
             "justMyCode": false,
             "module": "build",
@@ -36,26 +36,30 @@
             "name": "Install Demo Plugin - Flavor A",
             "type": "debugpy",
             "request": "launch",
-            "cwd": "${workspaceFolder}/demo_pep_771_flavorA/dist",
+            "cwd": "${workspaceFolder}/mockhouse/pep-771/pep-771-demo-a",
             "console": "integratedTerminal",
             "justMyCode": false,
             "module": "pip",
             "args": [
                 "install",
-                "demo_pep_771_flavorA-1.0.0-py3-none-any.whl"
+                "--no-cache",
+                "--force-reinstall",
+                "pep_771_demo_a-1.0.0-py3-none-any.whl"
             ],
         },
         {
             "name": "Install Demo Plugin - Flavor B",
             "type": "debugpy",
             "request": "launch",
-            "cwd": "${workspaceFolder}/demo_pep_771_flavorB/dist",
+            "cwd": "${workspaceFolder}/mockhouse/pep-771/pep-771-demo-b",
             "console": "integratedTerminal",
             "justMyCode": false,
             "module": "pip",
             "args": [
                 "install",
-                "demo_pep_771_flavorB-1.0.0-py3-none-any.whl"
+                "--no-cache",
+                "--force-reinstall",
+                "pep_771_demo_b-1.0.0-py3-none-any.whl"
             ],
         },
         {
@@ -86,6 +90,21 @@
                 "--verbose",
                 "--force-reinstall",
                 "pep-771-demo-a[flask]"
+            ],
+        },
+        {
+            "name": "Install Demo Plugin with Minimal",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "module": "pip",
+            "args": [
+                "install",
+                "--verbose",
+                "--force-reinstall",
+                "pep-771-demo-a[minimal]"
             ],
         },
     ]

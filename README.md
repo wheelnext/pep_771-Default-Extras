@@ -36,12 +36,6 @@ pip --version
 
 pip freeze | grep setuptools
 >>> setuptools @ git+https://github.com/wheel-next/setuptools.git@...
-
-pip freeze | grep validate-pyproject
->>> validate-pyproject @ git+https://github.com/wheel-next/validate-pyproject.git@...
-
-pip freeze | grep importlib_metadata
->>> importlib_metadata @ git+https://github.com/wheel-next/importlib_metadata.git@...
 ```
 
 2. Install the demo package:

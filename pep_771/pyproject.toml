@@ -12,6 +12,4 @@ authors = [
 dependencies = [
   "setuptools @ git+https://github.com/wheel-next/setuptools.git@pep_771",
   "pip @ git+https://github.com/wheel-next/pip.git@pep_771",
-  "validate-pyproject @ git+https://github.com/wheel-next/validate-pyproject.git@pep_771",
-  "importlib_metadata @ git+https://github.com/wheel-next/importlib_metadata.git@pep_771",
 ]
