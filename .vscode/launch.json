@@ -74,6 +74,7 @@
                 "install",
                 "--verbose",
                 "--force-reinstall",
+                "--no-cache",
                 "pep-771-demo-a"
             ],
         },
@@ -89,7 +90,8 @@
                 "install",
                 "--verbose",
                 "--force-reinstall",
-                "pep-771-demo-a[flask]"
+                "--no-cache",
+                "pep-771-demo-a[fastapi]"
             ],
         },
         {
