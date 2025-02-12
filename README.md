@@ -19,8 +19,8 @@ Aside of that, both have the exact same logic, exact same behavior:
 virtualenv .venv
 source .venv/bin/activate
 
-# 2. Set the extra index to the Wheel-Next Static Wheel Server: MockHouse
-pip config set --site global.extra-index-url https://wheel-next.github.io/mockhouse/pep-771/
+# 2. Set the extra index to the WheelNext Static Wheel Server: MockHouse
+pip config set --site global.extra-index-url https://mockhouse.wheelnext.dev/pep-771/
 >>> Writing to /path/to/venv/pip.conf
 
 # 2. Install the PEP 771 Metapackage that will give you the modified libraries:
@@ -35,7 +35,7 @@ pip --version
 >>> pip 25.0.dev0+pep-771 from ...  # <=============== Check you can see `+pep-771`
 
 pip freeze | grep setuptools
->>> setuptools @ git+https://github.com/wheel-next/setuptools.git@...
+>>> setuptools @ git+https://github.com/wheelnext/setuptools.git@...
 ```
 
 2. Install the demo package:

@@ -10,6 +10,6 @@ authors = [
   { name = "Jonathan Dekhtiar", email = "jonathan@dekhtiar.com" },
 ]
 dependencies = [
-  "setuptools @ git+https://github.com/wheel-next/setuptools.git@pep_771",
-  "pip @ git+https://github.com/wheel-next/pip.git@pep_771",
+  "setuptools @ git+https://github.com/wheelnext/setuptools.git@pep_771",
+  "pip @ git+https://github.com/wheelnext/pip.git@pep_771",
 ]

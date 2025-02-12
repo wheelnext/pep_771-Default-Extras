@@ -1,9 +1,9 @@
 [submodule "setuptools"]
 	path = setuptools
-	url = git@github.com:wheel-next/setuptools.git
+	url = git@github.com:wheelnext/setuptools.git
 [submodule "pip"]
 	path = pip
-	url = git@github.com:wheel-next/pip.git
+	url = git@github.com:wheelnext/pip.git
 [submodule "mockhouse"]
 	path = mockhouse
-	url = git@github.com:wheel-next/mockhouse.git
+	url = git@github.com:wheelnext/mockhouse.git
