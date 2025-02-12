@@ -46,36 +46,48 @@ pip freeze | grep setuptools
 # ~~~~~~~~ pep-771-demo-a ~~~~~~~~ #
 
 # will install pep-771-demo-a AND the default `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip uninstall -y flask pep-771-demo-a Jinja2 MarkupSafe Werkzeug blinker click itsdangerous
+pip freeze
 pip install pep-771-demo-a
+pip freeze
 
 # will install pep-771-demo-a AND the explicit `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip uninstall -y flask pep-771-demo-a Jinja2 MarkupSafe Werkzeug blinker click itsdangerous
+pip freeze
 pip install pep-771-demo-a[flask]
+pip freeze
 
 # will install pep-771-demo-a AND the explicit `fastapi` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip uninstall -y annotated-types anyio fastapi idna pep-771-demo-a pydantic pydantic-core sniffio starlette typing-extensions
 pip install pep-771-demo-a[fastapi]
 
 # will install pep-771-demo-a AND the explicit `minimal` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-a[minimal]
+pip uninstall -y pep-771-demo-a
+pip freeze
+pip install pep-771-demo-a[]
+pip freeze
 
 # ~~~~~~~~ pep-771-demo-b ~~~~~~~~ #
 
 # will install pep-771-demo-b AND the default `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip uninstall -y flask pep-771-demo-b Jinja2 MarkupSafe Werkzeug blinker click itsdangerous
+pip freeze
 pip install pep-771-demo-b
+pip freeze
 
 # will install pep-771-demo-b AND the explicit `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip uninstall -y flask pep-771-demo-b Jinja2 MarkupSafe Werkzeug blinker click itsdangerous
+pip freeze
 pip install pep-771-demo-b[flask]
+pip freeze
 
 # will install pep-771-demo-b AND the explicit `fastapi` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
+pip uninstall -y annotated-types anyio fastapi idna pep-771-demo-b pydantic pydantic-core sniffio starlette typing-extensions
 pip install pep-771-demo-b[fastapi]
 
 # will install pep-771-demo-b AND the explicit `minimal` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-b[minimal]
+pip uninstall -y pep-771-demo-b
+pip freeze
+pip install pep-771-demo-b[]
+pip freeze
 ```
