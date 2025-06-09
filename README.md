@@ -20,7 +20,8 @@ virtualenv .venv
 source .venv/bin/activate
 
 # 2. Set the extra index to the WheelNext Static Wheel Server: MockHouse
-pip config set --site global.extra-index-url https://mockhouse.wheelnext.dev/pep-771/
+pip config set --site global.index-url https://mockhouse.wheelnext.dev/pep-771/
+pip config set --site global.extra-index-url https://pypi.org/simple/
 >>> Writing to /path/to/venv/pip.conf
 
 # 2. Install the PEP 771 Metapackage that will give you the modified libraries:
@@ -45,37 +46,37 @@ pip freeze | grep setuptools
 
 # ~~~~~~~~ pep-771-demo-a ~~~~~~~~ #
 
-# will install pep-771-demo-a AND the default `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-a
+# should install pep-771-demo-a AND the default `flask` extra
+pip install --dry-run pep-771-demo-a
+>>> Would install Flask-X.Y.Z ... pep-771-demo-a-1.0.0
 
-# will install pep-771-demo-a AND the explicit `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-a[flask]
+# should install pep-771-demo-a AND the explicit `flask` extra
+pip install --dry-run pep-771-demo-a[flask]
+>>> Would install Flask-X.Y.Z ... pep-771-demo-a-1.0.0
 
 # will install pep-771-demo-a AND the explicit `fastapi` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-a[fastapi]
+pip install --dry-run pep-771-demo-a[fastapi]
+>>> Would install fastapi-X.Y.Z ... pep-771-demo-a-1.0.0
 
 # will install pep-771-demo-a AND the explicit `minimal` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-a[minimal]
+pip install --dry-run pep-771-demo-a[]
+>>> Would install pep-771-demo-a-1.0.0
 
 # ~~~~~~~~ pep-771-demo-b ~~~~~~~~ #
 
-# will install pep-771-demo-b AND the default `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-b
+# should install pep-771-demo-b AND the default `flask` extra
+pip install --dry-run pep-771-demo-b
+>>> Would install Flask-X.Y.Z ... pep-771-demo-b-1.0.0
 
-# will install pep-771-demo-b AND the explicit `flask` extra
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-b[flask]
+# should install pep-771-demo-b AND the explicit `flask` extra
+pip install --dry-run pep-771-demo-b[flask]
+>>> Would install Flask-X.Y.Z ... pep-771-demo-b-1.0.0
 
 # will install pep-771-demo-b AND the explicit `fastapi` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-b[fastapi]
+pip install --dry-run pep-771-demo-b[fastapi]
+>>> Would install fastapi-X.Y.Z ... pep-771-demo-b-1.0.0
 
 # will install pep-771-demo-b AND the explicit `minimal` extra - no default "flask"
-pip uninstall -y flask fastapi pep-771-demo-a pep-771-demo-b
-pip install pep-771-demo-b[minimal]
+pip install --dry-run pep-771-demo-b[]
+>>> Would install pep-771-demo-b-1.0.0
 ```
