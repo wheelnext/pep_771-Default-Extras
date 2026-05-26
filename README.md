@@ -65,7 +65,7 @@ pip install --dry-run pep-771-demo-a[flask]
 pip install --dry-run pep-771-demo-a[fastapi]
 >>> Would install fastapi-X.Y.Z ... pep-771-demo-a-1.0.0
 
-# will install pep-771-demo-a AND the explicit `minimal` extra - no default "flask"
+# will install only pep-771-demo-a (PEP 771 `[]` opts out of default extras)
 pip install --dry-run pep-771-demo-a[]
 >>> Would install pep-771-demo-a-1.0.0
 
@@ -83,7 +83,7 @@ pip install --dry-run pep-771-demo-b[flask]
 pip install --dry-run pep-771-demo-b[fastapi]
 >>> Would install fastapi-X.Y.Z ... pep-771-demo-b-1.0.0
 
-# will install pep-771-demo-b AND the explicit `minimal` extra - no default "flask"
+# will install only pep-771-demo-b (PEP 771 `[]` opts out of default extras)
 pip install --dry-run pep-771-demo-b[]
 >>> Would install pep-771-demo-b-1.0.0
 ```
