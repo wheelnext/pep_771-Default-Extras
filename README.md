@@ -3,6 +3,13 @@ This repository contains a simple demo package that makes use of a default extra
 It is an example usage of the specification described in the PEP
 draft at https://github.com/python/peps/pull/4198/.
 
+> **Note on the pyproject.toml key name.** This demo (and the setuptools fork it
+> depends on) uses `default-optional-dependencies` in the `[project]` table. The
+> current PEP 771 draft instead uses `default-optional-dependency-keys`. Since
+> the PEP is still subject to change, the demo is intentionally left on the
+> older spelling for now, and will be updated once the key name is finalized.
+> The `Default-Extra:` core-metadata field consumed by pip already matches the
+> PEP and is unaffected.
 
 The demo package comes in two flavors:
 - Flavor A: Built exclusively with `pyproject.toml`
