@@ -17,7 +17,11 @@ jobs:
         - linux: demoa-explicit
         - linux: demoa-extra
         - linux: demoa-minimal
+        - linux: demoa-double
+        - linux: demoa-doublename
         - linux: demob-noextra
         - linux: demob-explicit
         - linux: demob-extra
         - linux: demob-minimal
+        - linux: demob-double
+        - linux: demob-doublename
