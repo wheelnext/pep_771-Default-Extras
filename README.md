@@ -3,6 +3,13 @@ This repository contains a simple demo package that makes use of a default extra
 It is an example usage of the specification described in the PEP
 draft at https://github.com/python/peps/pull/4198/.
 
+> **Note on the pyproject.toml key name.** This demo (and the setuptools fork it
+> depends on) uses `default-optional-dependencies` in the `[project]` table. The
+> current PEP 771 draft instead uses `default-optional-dependency-keys`. Since
+> the PEP is still subject to change, the demo is intentionally left on the
+> older spelling for now, and will be updated once the key name is finalized.
+> The `Default-Extra:` core-metadata field consumed by pip already matches the
+> PEP and is unaffected.
 
 The demo package comes in two flavors:
 - Flavor A: Built exclusively with `pyproject.toml`
@@ -58,7 +65,7 @@ pip install --dry-run pep-771-demo-a[flask]
 pip install --dry-run pep-771-demo-a[fastapi]
 >>> Would install fastapi-X.Y.Z ... pep-771-demo-a-1.0.0
 
-# will install pep-771-demo-a AND the explicit `minimal` extra - no default "flask"
+# will install only pep-771-demo-a (PEP 771 `[]` opts out of default extras)
 pip install --dry-run pep-771-demo-a[]
 >>> Would install pep-771-demo-a-1.0.0
 
@@ -76,7 +83,7 @@ pip install --dry-run pep-771-demo-b[flask]
 pip install --dry-run pep-771-demo-b[fastapi]
 >>> Would install fastapi-X.Y.Z ... pep-771-demo-b-1.0.0
 
-# will install pep-771-demo-b AND the explicit `minimal` extra - no default "flask"
+# will install only pep-771-demo-b (PEP 771 `[]` opts out of default extras)
 pip install --dry-run pep-771-demo-b[]
 >>> Would install pep-771-demo-b-1.0.0
 ```
